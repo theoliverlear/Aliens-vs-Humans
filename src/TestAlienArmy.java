@@ -8,7 +8,8 @@ public class TestAlienArmy {
     @Test
     public void testAddSoldier() {
         testAlienSoldiers.add(new Alien("Super Soldier", 100, 20, 20));
-        assertThat(equalTo(testAlienSoldiers.get(0)), equalTo(new Alien("Super Soldier", 100, 20, 20)));
+        assertThat(equalTo(testAlienSoldiers.get(0)),
+                   equalTo(new Alien("Super Soldier", 100, 20, 20)));
     }
     @Test
     public void testGetAlien() {
@@ -18,6 +19,7 @@ public class TestAlienArmy {
     @Test
     public void testToString() {
         testAlienSoldiers.add(new Alien("Super Soldier", 100, 20, 20));
-        assertThat(equalTo("Type: Super Soldier   Health: 100   Armor: 20   Damage: 20"), equalTo(testAlienSoldiers.toString()));
+        assertThat(equalTo("Type: Super Soldier   Health: 100   Armor: 20   Damage: 20"),
+                   equalTo(testAlienSoldiers.toString()));
     }
 }

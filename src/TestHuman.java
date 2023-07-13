@@ -68,8 +68,13 @@ public class TestHuman {
     }
     @Test
     public void testToString() {
-        String one = new String("Type: " + "Armed Civilian" + "   " + "Health: " + "5" + "   " + "Armor: " + "0" + "   " + "Damage: " +  "1" + "   " + "Research per lvl: " + "0");
-        String two = new String("Type: " + testHuman.getType() + "   " + "Health: " + testHuman.getHealth() + "   " + "Armor: " + testHuman.getArmor() + "   " + "Damage: " +  testHuman.getDamage() + "   " + "Research per lvl: " + testHuman.getResearchPerLevel());
+        String one = "Type: " + "Armed Civilian" + "   " + "Health: " + "5" +
+                "   " + "Armor: " + "0" + "   " + "Damage: " + "1" + "   " +
+                "Research per lvl: " + "0";
+        String two = "Type: " + testHuman.getType() + "   " + "Health: " +
+                testHuman.getHealth() + "   " + "Armor: " + testHuman.getArmor()
+                + "   " + "Damage: " + testHuman.getDamage() + "   " + "Research" +
+                " per lvl: " + testHuman.getResearchPerLevel();
         assertThat(equalTo(one), equalTo(two));
     }
     @Test

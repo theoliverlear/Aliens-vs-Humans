@@ -45,7 +45,8 @@ public class AvHSimulator {
              return false;
          }
     }
-    private <T> T getOutputOnIntInput(String userInputPrompt, IntUserInputRetriever<T> intUserInputRetriever) {
+    private <T> T getOutputOnIntInput(String userInputPrompt,
+                                      IntUserInputRetriever<T> intUserInputRetriever) {
         System.out.println(userInputPrompt);
         T temp_T = null;
         int userInt = input.nextInt();
@@ -82,20 +83,25 @@ public class AvHSimulator {
                     effectiveDamage = 0;
                 }
                 alienArmy.getAlien().setHealth(alienArmy.getAlien().getHealth() - effectiveDamage);
-                System.out.println(selection + ": Attack chosen. You attack with " + humanArmy.getHuman().getDamage() + " damage. The alien's have " + alienArmy.getAlien().getArmor() + " armor - you did "  + effectiveDamage + " effective damage.");
+                System.out.println(selection + ": Attack chosen. You attack with "
+                        + humanArmy.getHuman().getDamage() +
+                        " damage. The alien's have " + alienArmy.getAlien().getArmor()
+                        + " armor - you did "  + effectiveDamage + " effective damage.");
                 try {Thread.sleep(1000);} catch (InterruptedException e) { throw new RuntimeException(e); }
                 if(aIsDead()) {
                     alienArmy.getAlien().setHealth(0);
                 }
-                System.out.println("The aliens now have " + alienArmy.getAlien().getHealth() + " health.");
+                System.out.println("The aliens now have " +
+                                   alienArmy.getAlien().getHealth() + " health.");
                 try {Thread.sleep(1000);} catch (InterruptedException e) { throw new RuntimeException(e);}
                 shouldAtk[0] = true;
             } else if (selection == 1) {
-                System.out.println(selection + ": Research chosen. You increase " + humanArmy.getHuman().getResearchPerLevel()+ " research points.");
+                System.out.println(selection + ": Research chosen. " +
+                        "You increase " + humanArmy.getHuman().getResearchPerLevel()
+                        + " research points.");
                 try {Thread.sleep(1000);} catch (InterruptedException e) { throw new RuntimeException(e);}
                 humanArmy.getHuman().humanLvlUp(5);
                 try {Thread.sleep(1000);} catch (InterruptedException e) { throw new RuntimeException(e);}
-                //function to check human level + level up - maybe extends?
                 shouldAtk[0] = false;
             }
             else {
@@ -113,9 +119,10 @@ public class AvHSimulator {
             effectiveDamage = 0;
         }
         humanArmy.getHuman().setHealth(humanArmy.getHuman().getHealth() - effectiveDamage);
-        System.out.println("The alien's attack with " + alienArmy.getAlien().getDamage() + " damage. The humans's have " + humanArmy.getHuman().getArmor() + " armor - they did "  + effectiveDamage + " effective damage.");
+        System.out.println("The alien's attack with " + alienArmy.getAlien().getDamage() +
+                " damage. The humans's have " + humanArmy.getHuman().getArmor() + "" +
+                " armor - they did "  + effectiveDamage + " effective damage.");
         if(!hIsDead()){
-
             try {Thread.sleep(1000);} catch (InterruptedException e) { throw new RuntimeException(e); }
             if(humanArmy.getHuman().getHealth() == 0) {
                 humanArmy.getHuman().setHealth(0);
@@ -123,7 +130,6 @@ public class AvHSimulator {
             System.out.println("You now have " + humanArmy.getHuman().getHealth() + " health.");
             try {Thread.sleep(1000);} catch (InterruptedException e) { throw new RuntimeException(e);}
         } else if(hIsDead()){
-
             System.out.println("The human race loses the battle for Earth!");
         }
     }

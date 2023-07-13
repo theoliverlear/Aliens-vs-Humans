@@ -39,7 +39,8 @@ public class Alien {
     }
     @Override
     public String toString() {
-        return "Type: " + this.type + "   " + "Health: " + this.health + "   " + "Armor: " + this.armor + "   " + "Damage: " +  this.damage;
+        return "Type: " + this.type + "   " + "Health: " + this.health + "   "
+                + "Armor: " + this.armor + "   " + "Damage: " +  this.damage;
     }
 
     public void alienLvlUp(int amount) {
